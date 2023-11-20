@@ -1,0 +1,41 @@
+/* TutorComponent.css */
+
+.tutor-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.tutor-heading {
+    color: #333;
+}
+
+.tutor-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.tutor-name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.tutor-fit-score {
+    margin: 0;
+}
+
+.add-to-favorite-button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.no-results {
+    color: #777;
+}

@@ -1,0 +1,69 @@
+{
+    "name": "getStudentPreferences",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "subject": {
+                "type": "string"
+            },
+            "grade": {
+                "type": "number"
+            },
+            "classes": {
+                "type": "array",
+                "description": "each entry represents one class with its prefered timing, if the student wants two classes per week there should be two entries in the array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "duration": {
+                            "type": "integer",
+                            "description": "the duration in hours"
+                        },
+                        "prefTime": {
+                            "type": "array",
+                            "description": "array of the prefered time by the student for the class,for example if the student wants the weekend it should have two array elements one for saturday and one for sunday",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "day": {
+                                        "type": "string",
+                                        "enum": [
+                                            "saturday",
+                                            "sunday",
+                                            "monday",
+                                            "tuesday",
+                                            "wednesday",
+                                            "thursday",
+                                            "friday"
+                                        ]
+                                    },
+                                    "slots": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        },
+                                        "description": "array of time slots describing the hours available by the tutor in 24h format. Example: [16,17] means it is available from 4 pm-6 pm."
+                                    }
+                                },
+                                "required": [
+                                    "day",
+                                    "slots"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "duration",
+                        "prefTime"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "subject",
+            "grade",
+            "classes"
+        ]
+    },
+    "description": "a function that takes a list of arguments related to the required subject and grade and student preferred class times and does something with it"
+}
